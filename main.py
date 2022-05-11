@@ -1,8 +1,7 @@
-import users
 from users import Users
 
 
-class Bank(Users):
+class Bank:
     users = []
     def __init__(self):
         self.users.append(Users('Wanjiru', 0))
@@ -14,7 +13,7 @@ class Bank(Users):
 
         index = 0
         indexValidList = []
-        print('Select an ' + name + ':')
+        print('Select an ' + name + '(1-5):')
         for optionName in options:
             index = index + 1
             indexValidList.extend([options[optionName]])
@@ -61,6 +60,7 @@ class Bank(Users):
         options['Withdraw'] = 'withdraw'
         options['Transfer'] = 'transfer'
         options['Switch Account'] = 'switch'
+        options['Exit'] = 'exit'
         option = self.selectFromDict(options, 'option')
         if(option == 'deposit'):
             self.deposit()
@@ -71,6 +71,8 @@ class Bank(Users):
         elif (option == 'switch'):
             print("Thank you :)")
             self.switchUser()
+        elif (option == 'exit'):
+            print("Thank you :)")
         else:
             print("Invalid Choice")
 
